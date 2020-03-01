@@ -8,6 +8,15 @@ def rotLeft(a, d):
     a = a + list_end
     return a
 
+"""def rotateLeft(a, d):
+    i = d
+    while i > 0:
+        endelement = a[0]
+        a.pop(0)
+        a.append(endelement)
+        i = i - 1
+    return a
+"""
 def getMaxElementIndexes(a, rotate):
     maxindexlist = []
     for i in rotate:
@@ -22,6 +31,6 @@ def getMaxElementIndexes(a, rotate):
 
 
 a = [1,2,3,4,5]
-rotate = [1,0,37]
+rotate = [1,2,7]
 result = getMaxElementIndexes(a, rotate)
 print(result)
