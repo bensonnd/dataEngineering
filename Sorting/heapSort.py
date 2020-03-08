@@ -45,6 +45,7 @@ def heapSort(arr):
     '''
     buildMaxHeap(arr)
     heapsize = len(arr)
+    #sort the heap
     for i in reversed(range(1, heapsize)):
         arr[0], arr[i] = arr[i], arr[0]  # move max value in heapified array to end
         heapsize -= 1  # exclude max value at end of heapified array in next heapification
@@ -52,15 +53,35 @@ def heapSort(arr):
                                     1)  # re-heap each new slice of the array as the heap decreases in size
     return arr
 
-array = [17,14,6,23,13,10,1,5,7,12]
+def heapIncreaseKey(arr, i, key):
+    # parent = (i - 1) // 2
+    if key < arr[i]:
+        print("Err - New key is smaller than current key")
+    arr[i] = key
+    buildMaxHeap(arr)
+    return arr
+
+def maxHeapInsert(key, arr=[]):
+    arr.append(float("-inf"))
+    heapsize = len(arr) - 1
+    heapIncreaseKey(arr, heapsize, key)
+    return arr
+
+def heapMax (arr):
+    return arr[0]
+
+array = [17,14,6,23,13,10,1,5,7,12,89,90,7434,22]
 print(array)
 print(buildMaxHeap(array))
+print(maxHeapInsert(27,array))
 print(heapSort(array))
 
-# print(heapSort(array))
+gen_exp = (min(array[i:i+3]) for i in range(len(array) - 2)) # generator to iterate over the list, get the min for every 3 elements
+listicle = []
+for i in gen_exp:
+   maxHeapInsert(i, listicle) # doesn't iterate over the list until it's called here, so it only traverses the list once
 
-#   list comprehension for grabbing every third minimum
-# TODO Insert the minumum amount into the heap
-[min(array[i:i+3]) for i in range(len(array) - 2)]
+print(listicle)
+print(heapMax(listicle))
 
 
