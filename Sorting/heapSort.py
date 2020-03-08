@@ -36,6 +36,7 @@ def buildMaxHeap(arr):
     while i > 0:
         maxHeapify(arr,i)
         i -= 1
+    return arr
 
 def heapSort(arr):
     '''Takes an array, builds a max heap out of it, moves the 0 index/MAX value to the end, and heapifies each remaining element.
@@ -44,15 +45,22 @@ def heapSort(arr):
     '''
     buildMaxHeap(arr)
     heapsize = len(arr)
-    for i in reversed(range(2,heapsize)):
-        arr[0], arr[i] = arr[i], arr[0]     #move max value in heapified array to end
-        heapsize -= 1                       #exclude max value at end of heapified array in next heapification
-        b = 2
-        maxHeapify(arr[:heapsize],1)        #TODO check to see how to perform a function/manipulation on list slice in place - not bringing in the heapified list to the existing array
-`
+    for i in reversed(range(1, heapsize)):
+        arr[0], arr[i] = arr[i], arr[0]  # move max value in heapified array to end
+        heapsize -= 1  # exclude max value at end of heapified array in next heapification
+        arr[:heapsize] = maxHeapify(arr[:heapsize],
+                                    1)  # re-heap each new slice of the array as the heap decreases in size
     return arr
 
-array = [23,17,14,6,13,10,1,5,7,12]
+array = [17,14,6,23,13,10,1,5,7,12]
 print(array)
+print(buildMaxHeap(array))
 print(heapSort(array))
+
+# print(heapSort(array))
+
+#   list comprehension for grabbing every third minimum
+# TODO Insert the minumum amount into the heap
+[min(array[i:i+3]) for i in range(len(array) - 2)]
+
 
