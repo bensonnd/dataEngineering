@@ -27,14 +27,14 @@ RAW:    raw_gamedata_games
     	raw_playerdata_player
 
 LZ:     lz_gamedata_games
-	    lz_playerdata_contactinfo
-	    lz_playerdata_login
-    	lz_playerdata_pictures
-    	lz_playerdata_player
+	lz_playerdata_contactinfo
+	lz_playerdata_login
+	lz_playerdata_pictures
+	lz_playerdata_player
 
 PROC:   proc_gamedata_games
-	    proc_playerdata_contactinfo
-    	proc_playerdata_login	
-    	proc_playerdata_pictures
-    	proc_playerdata_player
+	proc_playerdata_contactinfo
+	proc_playerdata_login
+	proc_playerdata_pictures
+	proc_playerdata_player
 
