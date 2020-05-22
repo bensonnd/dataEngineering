@@ -23,20 +23,20 @@ start job to put data into proc => crawl proc data in s3
 source => raw => lz => proc
     
 ### Data warehouse tables to query:
-RAW:
-raw_gamedata_games
-raw_playerdata_player
-
-LZ:
-lz_gamedata_games
-lz_playerdata_contactinfo
-lz_playerdata_login
-lz_playerdata_pictures
-lz_playerdata_player
-
-PROC:
-proc_gamedata_games
-proc_playerdata_contactinfo
-proc_playerdata_login
-proc_playerdata_pictures
-proc_playerdata_player
+RAW:  
+    raw_gamedata_games  
+    raw_playerdata_player  
+  
+LZ:  
+    lz_gamedata_games  
+    lz_playerdata_contactinfo  
+    lz_playerdata_login  
+    lz_playerdata_pictures  
+    lz_playerdata_player  
+  
+PROC:  
+    proc_gamedata_games  
+    proc_playerdata_contactinfo  
+    proc_playerdata_login  
+    proc_playerdata_pictures  
+    proc_playerdata_player  
