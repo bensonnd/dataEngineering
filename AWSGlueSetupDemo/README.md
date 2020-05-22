@@ -3,7 +3,7 @@ Hi! Welcome to my mini datawarehouse for a demo game. Please enjoy!
 
 The overall project extracts data from s3 in CSV and paginated JSON format, and will move to various stage keys in target s3 for RAW, LZ, and PROC. The data is initially transformed using Pandas, then passed to Glue jobs to transform the data using Spark and Python. 
 
-The project provisions the s3 bucket structure, deploys the Glue job scripts, builds out the workflows, crawlers, triggers, and jobs in Glue. Finally, the workflows created move all the data from RAW => LZ => PROC and finish by crawling the data to add to the metastore so that the data can be queried in Athena. The entire process is mostly automated, except executing the init.py script. 
+The project provisions the s3 bucket structure, deploys the Glue job scripts, and builds out the workflows, crawlers, triggers, and jobs in Glue. Finally, the workflows created move all the data from RAW => LZ => PROC and finish by crawling the data to add to the metastore so that the data can be queried in Athena. The entire process is mostly automated, except executing the init.py script. 
     
 ### init.py 
 will pip install all the necesarry packages, setup temporary access to s3, and start the AWSExtract script.
