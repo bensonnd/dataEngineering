@@ -1,4 +1,4 @@
-# AWS Setup Demo - Provisioning AWS s3 and Glue
+# AWS Setup Demo - Provisioning AWS s3 and Glue Using Python
 Hi! Welcome to my mini datawarehouse for a demo game. Please enjoy!
 
 The overall project extracts data from s3 in CSV and paginated JSON format, and will move to various stage keys in target s3 for RAW, LZ, and PROC. The data is initially transformed using Pandas, then passed to Glue jobs to transform the data using Spark and Python. 
