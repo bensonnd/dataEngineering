@@ -1,4 +1,4 @@
-## AWS Setup Demo - Provisioning AWS s3 and Glue
+# AWS Setup Demo - Provisioning AWS s3 and Glue
 Hi! Welcome to my mini datawarehouse for a demo game. Please enjoy!
 
 The overall project extracts data from s3 in CSV and paginated JSON format, and will move to various stage keys in target s3 for RAW, LZ, and PROC. The data is initially transformed using Pandas, then passed to Glue jobs to transform the data using Spark and Python. 
@@ -15,28 +15,26 @@ deploy job scripts to s3, and then start AWSGlueInit script.
 ## AWSGlueInit.py 
 will setup Glue workflows, triggers, crawlers, and jobs and start the workflows.
 
-## Workflows:
-    Crawl raw data in s3 => start job to transform raw data and put into lz => crawl lz data in s3 =>
-    start job to put data into proc => crawl proc data in s3
+## Workflows
+Crawl raw data in s3 => start job to transform raw data and put into lz => crawl lz data in s3 =>
+start job to put data into proc => crawl proc data in s3
 
-## Data flow:
-    source => raw => lz => proc
+## Data flow
+source => raw => lz => proc
     
 ## Available tables to query:
-    RAW:    raw_gamedata_games	
-            raw_playerdata_player
-    
-    LZ:     lz_gamedata_games
-	
-            lz_playerdata_contactinfo
-            lz_playerdata_login
-            lz_playerdata_pictures
-            lz_playerdata_player
-            
-   PROC:    proc_gamedata_games
-	
-            proc_playerdata_contactinfo
-            proc_playerdata_login	
-            proc_playerdata_pictures
-            proc_playerdata_player
+RAW:    raw_gamedata_games	
+    	raw_playerdata_player
+
+LZ:     lz_gamedata_games
+	lz_playerdata_contactinfo
+	lz_playerdata_login
+    	lz_playerdata_pictures
+    	lz_playerdata_player
+
+PROC:    proc_gamedata_games
+	proc_playerdata_contactinfo
+    	proc_playerdata_login	
+    	proc_playerdata_pictures
+    	proc_playerdata_player
 
