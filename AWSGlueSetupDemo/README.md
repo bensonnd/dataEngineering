@@ -22,7 +22,7 @@ start job to put data into proc => crawl proc data in s3
 ### Data flow
 source => raw => lz => proc
     
-### Available tables to query:
+### Data warehouse tables to query:
 RAW:    raw_gamedata_games	
     	raw_playerdata_player
 
